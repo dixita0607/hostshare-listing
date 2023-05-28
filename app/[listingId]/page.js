@@ -9,14 +9,13 @@ export default function ListingDetails({ params }) {
 
   return (
     <div className="flex flex-col">
-      <Header />
       {/* Title */}
       <div className="flex flex-col">
         <h1>{listingDetails.title}</h1>
         <div className="flex align-middle">
           <div>{listingDetails.ratings.guestSatisfactionOverall}</div>
           <div>{listingDetails.visibleReviewCount}</div>
-          {listingDetails.host.isSuperhost && <div>Superhost</div>}
+          {listingDetails.host?.isSuperhost && <div>Superhost</div>}
           <div>
             {listingDetails.location.city},{" "}
             {listingDetails.location.country.title}
@@ -42,13 +41,13 @@ export default function ListingDetails({ params }) {
       {/* Host info */}
       <div className="flex align-middle justify-between">
         <h1>
-          {listingDetails.type} hosted by {listingDetails.host.name}
+          {listingDetails.type} hosted by {listingDetails.host?.name}
         </h1>
         <div>
           <Image
-            src={listingDetails.host.avatar.url}
-            width={listingDetails.host.avatar.width}
-            height={listingDetails.host.avatar.height}
+            src={listingDetails.host?.avatar.url}
+            width={listingDetails.host?.avatar.width}
+            height={listingDetails.host?.avatar.height}
             alt="Host"
           />
         </div>
