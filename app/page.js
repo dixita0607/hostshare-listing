@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Search from "./components/Search";
+import allListings from "./data/listing-data";
+import ListingCard from "./components/ListingCard";
 
 export default function Home() {
   return (
@@ -17,7 +19,12 @@ export default function Home() {
       </div>
 
       {/* Content */}
-      <div className="p-8">Listing content default</div>
+      <div className="p-8 flex flex-wrap justify-evenly">
+        {/* TODO: Add category wise list */}
+        {allListings.data.map((listItem) => {
+          return <ListingCard key={listItem.info.id} details={listItem.info} />;
+        })}
+      </div>
     </div>
   );
 }
