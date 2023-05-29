@@ -1,16 +1,19 @@
-import allListings from "./data/listing-data";
 import ListingCard from "./components/ListingCard";
+import { fetchAllListings } from "../apis/listings";
 
-export default function Home() {
+const Home = async () => {
+  const listings = await fetchAllListings();
+
   return (
     <div className="flex flex-col">
-      {/* Content */}
-      <div className="p-8 flex flex-wrap justify-evenly">
+      <div className="p-5 pl-32 pr-32 flex flex-wrap justify-evenly">
         {/* TODO: Add category wise list */}
-        {allListings.data.map((listItem, index) => {
+        {listings.map((listItem, index) => {
           return <ListingCard key={index.toString} details={listItem.info} />;
         })}
       </div>
     </div>
   );
-}
+};
+
+export default Home;

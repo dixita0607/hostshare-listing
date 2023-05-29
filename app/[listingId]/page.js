@@ -1,11 +1,8 @@
 import Image from "next/image";
-import Header from "../components/Header";
-import allListings from "../data/listing-data";
+import { fetchListingById } from "../../apis/listings";
 
-export default function ListingDetails({ params }) {
-  const listingDetails = allListings.data.find(
-    (house) => house.info.id === params.listingId
-  )?.info;
+const ListingDetails = async ({ params }) => {
+  const listingDetails = await fetchListingById(params.listingId);
 
   return (
     <div className="flex flex-col">
@@ -78,4 +75,6 @@ export default function ListingDetails({ params }) {
       </div>
     </div>
   );
-}
+};
+
+export default ListingDetails;
