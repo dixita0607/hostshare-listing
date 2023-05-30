@@ -12,7 +12,7 @@ const Home = async () => {
 
   return (
     <div className="flex flex-col">
-      <div className="p-5 pl-32 pr-32 flex flex-wrap justify-evenly">
+      <div className="p-5 flex flex-wrap justify-evenly space-x-2 space-y-8">
         {/* TODO: Add category wise list */}
         {listings?.data?.map((listItem, index) => {
           return <ListingCard key={index.toString} details={listItem.info} />;

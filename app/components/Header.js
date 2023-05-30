@@ -5,7 +5,7 @@ import { CgProfile, CgMenu } from "react-icons/cg";
 
 const Header = () => {
   return (
-    <div className="flex align-middle justify-between p-5 pl-32 pr-32 border-b-2 border-gray-200 border-solid">
+    <div className="flex align-middle justify-between p-5 border-b-2 border-gray-200 border-solid">
       <Link href="/">
         <Image
           src="/images/logo-with-name.png"
