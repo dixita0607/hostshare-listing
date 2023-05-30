@@ -15,7 +15,7 @@ const ListingDetails = async ({ params }) => {
       {/* Title */}
       <div className="flex flex-col">
         <h1>{listingDetails.title}</h1>
-        <div className="flex align-middle">
+        <div className="flex items-center">
           <div>{listingDetails.ratings.guestSatisfactionOverall}</div>
           <div>{listingDetails.visibleReviewCount}</div>
           {listingDetails.host?.isSuperhost && <div>Superhost</div>}
@@ -26,7 +26,7 @@ const ListingDetails = async ({ params }) => {
         </div>
       </div>
       {/* Images */}
-      <div className="flex align-middle justify-start flex-wrap">
+      <div className="flex items-center justify-start flex-wrap">
         {listingDetails.images.data?.map((image) => (
           <div key={image.url} className="p-2 m-2">
             <Image
@@ -42,7 +42,7 @@ const ListingDetails = async ({ params }) => {
         ))}
       </div>
       {/* Host info */}
-      <div className="flex align-middle justify-between">
+      <div className="flex items-center justify-between">
         <h1>
           {listingDetails.type} hosted by {listingDetails.host?.name}
         </h1>
@@ -75,7 +75,7 @@ const ListingDetails = async ({ params }) => {
 
       {/* Reserve */}
       {/* TODO: Design whole card */}
-      <div className="flex align-middle justify-between fixed right-0">
+      <div className="flex items-center justify-between fixed right-0">
         {listingDetails.currency.symbol}
         {listingDetails.price}/night
       </div>

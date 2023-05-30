@@ -31,7 +31,7 @@ const ListingCard = ({ details }) => {
           ))}
       </Carousel>
       <Link href={`/${details.id}`} target="_blank">
-        <div className="flex align-middle justify-between">
+        <div className="flex items-center justify-between">
           <div>{details.location.city}</div>
           <div>
             {details.currency.symbol}
