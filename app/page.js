@@ -9,7 +9,6 @@ const fetchAllListings = async () => {
 
 const Home = async () => {
   const listings = await fetchAllListings();
-
   return (
     <div className="flex flex-col">
       <div className="p-5 flex flex-wrap justify-evenly space-x-2 space-y-8">
