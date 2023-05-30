@@ -1,8 +1,14 @@
 import Image from "next/image";
-import { fetchListingById } from "../../apis/listings";
+
+const getListingDetails = async (listingId) => {
+  const res = await fetch(`${process.env.HOST}/api/${listingId}`, {
+    cache: "no-store",
+  });
+  return res.json();
+};
 
 const ListingDetails = async ({ params }) => {
-  const listingDetails = await fetchListingById(params.listingId);
+  const listingDetails = await getListingDetails(params.listingId);
 
   return (
     <div className="flex flex-col">
