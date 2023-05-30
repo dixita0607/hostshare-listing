@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { AiFillStar } from "react-icons/ai";
 
 const ListingCard = ({ details }) => {
   return (
@@ -31,11 +32,28 @@ const ListingCard = ({ details }) => {
           ))}
       </Carousel>
       <Link href={`/${details.id}`} target="_blank">
-        <div className="flex items-center justify-between">
-          <div>{details.location.city}</div>
+        <div className="flex justify-between text-sm">
           <div>
-            {details.currency.symbol}
-            {details.price}/night
+            <div className="mt-2">
+              <span className="font-semibold">{details.location.city}</span>
+              <span>
+                {", "}
+                {details.location.country?.title}
+              </span>
+            </div>
+            <div>
+              <span className="font-semibold">
+                {details.currency.symbol}
+                {details.price}{" "}
+              </span>
+              night
+            </div>
+          </div>
+          <div className="flex items-center">
+            <AiFillStar />
+            <span className="font-semibold ml-0.5 mt-0.5">
+              {details.ratings.guestSatisfactionOverall}
+            </span>
           </div>
         </div>
       </Link>
