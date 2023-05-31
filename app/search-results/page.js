@@ -2,7 +2,7 @@ import ListingCard from "../components/ListingCard";
 
 const getListingsByCity = async (city) => {
   const res = await fetch(
-    `://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/listings/search`,
+    `${process.env.NEXT_PUBLIC_URL}/api/listings/search`,
     {
       method: "POST",
       body: JSON.stringify({

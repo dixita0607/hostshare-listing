@@ -3,12 +3,9 @@ import { AiFillStar } from "react-icons/ai";
 import { GrGallery } from "react-icons/gr";
 
 const getListingDetails = async (listingId) => {
-  const res = await fetch(
-    `://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/${listingId}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/${listingId}`, {
+    cache: "no-store",
+  });
   return res.json();
 };
 
