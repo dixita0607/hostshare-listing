@@ -4,7 +4,7 @@ import { GrGallery } from "react-icons/gr";
 
 const getListingDetails = async (listingId) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/${listingId}`,
+    `://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/${listingId}`,
     {
       cache: "no-store",
     }
