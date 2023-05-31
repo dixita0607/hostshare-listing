@@ -25,7 +25,7 @@ const ListingDetails = ({ params }) => {
   if (isLoading || !listingDetails)
     return <div className="mt-5 text-center">Loading...</div>;
   return (
-    <div className="flex flex-col px-32 py-5">
+    <div className="flex flex-col px-32 max-md:px-3 py-5">
       {/* Title */}
       <div className="flex flex-col">
         <h1 className="text-2xl font-medium">{listingDetails?.title}</h1>
@@ -103,7 +103,7 @@ const ListingDetails = ({ params }) => {
           <span className="ml-1">Show all photos</span>
         </button>
       </div>
-      <div className="flex space-x-8">
+      <div className="flex space-x-8 max-md:space-x-0">
         <div className="flex-1">
           {/* Host info */}
           <div className="flex items-center justify-between mt-3">
@@ -151,7 +151,7 @@ const ListingDetails = ({ params }) => {
 
         {/* Reserve */}
         {/* TODO: Design whole card */}
-        <div className="flex flex-col sticky bg-white border-zinc-300 border-2 shadow-lg rounded-md p-4 mt-4 w-96 h-fit top-5">
+        <div className="flex flex-col sticky bg-white border-zinc-300 border-2 shadow-lg rounded-md p-4 mt-4 w-96 max-md:w-[94%] h-fit md:top-5 max-md:fixed max-md:bottom-0 max-md:mt-0">
           <div className="flex align-center justify-between">
             <div>Price:</div>
             <div>
