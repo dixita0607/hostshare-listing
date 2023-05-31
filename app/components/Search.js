@@ -59,7 +59,7 @@ const Search = () => {
 
       {/* Date picker */}
       <div
-        className={`rounded-full w-48	p-2 pt-5 flex flex-col justify-middle ${
+        className={`rounded-full w-48	p-2 pt-5 flex flex-col justify-middle max-md:hidden ${
           currentFilter === FILTERS.CHECK_IN ? "shadow-md bg-slate-50" : ""
         }`}
         onClick={() => setCurrentFilter(FILTERS.CHECK_IN)}
@@ -75,7 +75,7 @@ const Search = () => {
         />
       </div>
       <div
-        className={`rounded-full w-48 p-2 pt-5 flex flex-col justify-middle ${
+        className={`rounded-full w-48 p-2 pt-5 flex flex-col justify-middle max-md:hidden ${
           currentFilter === FILTERS.CHECK_OUT ? "shadow-md bg-slate-50" : ""
         }`}
         onClick={() => setCurrentFilter(FILTERS.CHECK_OUT)}
@@ -93,7 +93,7 @@ const Search = () => {
 
       {/* Number of people */}
       <div
-        className={`rounded-full w-40	p-2 ${
+        className={`rounded-full w-40	p-2 max-md:hidden ${
           currentFilter === FILTERS.NUMBER_OF_PEOPLE
             ? "shadow-md bg-slate-50"
             : ""

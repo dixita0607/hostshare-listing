@@ -16,7 +16,7 @@ const Header = () => {
       </Link>
       <Search />
       <div className="flex items-center justify-between">
-        <CgMenu className="text-2xl" />
+        <CgMenu className="text-2xl max-md:hidden" />
         <CgProfile className="ml-4 text-2xl" />
       </div>
     </div>
