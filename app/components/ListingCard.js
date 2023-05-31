@@ -18,7 +18,7 @@ const ListingCard = ({ details }) => {
         width={240}
       >
         {details.images.data
-          .filter((image) => image.type !== "avatar" && image.type !== "main")
+          ?.filter((image) => image.type !== "avatar" && image.type !== "main")
           ?.map((image, index) => (
             <div key={index.toString()}>
               <Image
