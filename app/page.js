@@ -1,9 +1,12 @@
 import ListingCard from "./components/ListingCard";
 
 const fetchAllListings = async () => {
-  const res = await fetch(`${process.env.HOST}/api/listings`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/listings`,
+    {
+      cache: "no-store",
+    }
+  );
   return res.json();
 };
 
