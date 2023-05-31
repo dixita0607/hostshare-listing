@@ -103,94 +103,97 @@ const ListingDetails = ({ params }) => {
           <span className="ml-1">Show all photos</span>
         </button>
       </div>
-      {/* Host info */}
-      <div className="flex items-center justify-between mt-3">
-        <h1 className="text-xl font-medium">
-          A {listingDetails?.type} hosted by {listingDetails?.host?.name}
-        </h1>
-        <div className="ml-3">
-          <Image
-            src={listingDetails?.host?.avatar?.url}
-            width={50}
-            height={50}
-            alt="Host"
-            className="rounded-full"
-          />
-        </div>
-      </div>
-
-      {/* TODO: Render this in markdown or html */}
-      <div className="mt-3">
-        <h1 className="text-xl font-medium">About this place</h1>
-        <div title={listingDetails?.description} className="text-sm mt-1">
-          {listingDetails?.description?.slice(0, 500)}...
-        </div>
-      </div>
-
-      {/* Amenities */}
-      <div className="mt-3">
-        <h1 className="text-xl font-medium">What this place offers</h1>
-        <div className="flex flex-wrap items-center">
-          {listingDetails?.amenities?.data?.map((amenity, index) => (
-            <div
-              key={index.toString()}
-              className={`border-black border-2 rounded-md p-2 m-1 ${
-                !amenity.available
-                  ? "line-through text-gray-600 border-slate-600"
-                  : ""
-              }`}
-            >
-              {amenity.title}
+      <div className="flex space-x-8">
+        <div className="flex-1">
+          {/* Host info */}
+          <div className="flex items-center justify-between mt-3">
+            <h1 className="text-xl font-medium">
+              A {listingDetails?.type} hosted by {listingDetails?.host?.name}
+            </h1>
+            <div className="ml-3">
+              <Image
+                src={listingDetails?.host?.avatar?.url}
+                width={50}
+                height={50}
+                alt="Host"
+                className="rounded-full"
+              />
             </div>
-          ))}
+          </div>
+
+          {/* TODO: Render this in markdown or html */}
+          <div className="mt-3">
+            <h1 className="text-xl font-medium">About this place</h1>
+            <div title={listingDetails?.description} className="text-sm mt-1">
+              {listingDetails?.description?.slice(0, 500)}...
+            </div>
+          </div>
+
+          {/* Amenities */}
+          <div className="mt-3">
+            <h1 className="text-xl font-medium">What this place offers</h1>
+            <div className="flex flex-wrap items-center">
+              {listingDetails?.amenities?.data?.map((amenity, index) => (
+                <div
+                  key={index.toString()}
+                  className={`border-black border-2 rounded-md p-2 m-1 ${
+                    !amenity.available
+                      ? "line-through text-gray-600 border-slate-600"
+                      : ""
+                  }`}
+                >
+                  {amenity.title}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* TODO: Location map */}
-
-      {/* Reserve */}
-      {/* TODO: Design whole card */}
-      <div className="flex flex-col fixed right-0 p-4 bg-white border-zinc-300 border-2 shadow-lg rounded-md w-80">
-        <div className="flex align-center justify-between">
-          <div>Price:</div>
-          <div>
-            <span className="font-semibold">
+        {/* Reserve */}
+        {/* TODO: Design whole card */}
+        <div className="flex flex-col sticky bg-white border-zinc-300 border-2 shadow-lg rounded-md p-4 mt-4 w-96 h-fit top-5">
+          <div className="flex align-center justify-between">
+            <div>Price:</div>
+            <div>
+              <span className="font-semibold">
+                {listingDetails?.currency?.symbol}
+                {listingDetails?.price}{" "}
+              </span>
+              night
+            </div>
+          </div>
+          <div className="flex align-center justify-between">
+            <div>People: </div>
+            <div>2</div>
+          </div>
+          <div className="flex align-center justify-between">
+            <div>Check-in:</div>
+            <div> 2nd June, 2023</div>
+          </div>
+          <div className="flex align-center justify-between">
+            <div>Check-out:</div>
+            <div>6nd June, 2023</div>
+          </div>
+          <div className="flex align-center justify-between">
+            <div>Total nights:</div>
+            <div>4 nights</div>
+          </div>
+          <div className="flex align-center justify-between">
+            <div>Total:</div>
+            <div className="font-semibold">
               {listingDetails?.currency?.symbol}
-              {listingDetails?.price}{" "}
-            </span>
-            night
+              {4 * listingDetails?.price}
+            </div>
           </div>
+          <button
+            type="button"
+            className="bg-primary p-2 mt-3 rounded-md text-white"
+          >
+            Reserve
+          </button>
         </div>
-        <div className="flex align-center justify-between">
-          <div>People: </div>
-          <div>2</div>
-        </div>
-        <div className="flex align-center justify-between">
-          <div>Check-in:</div>
-          <div> 2nd June, 2023</div>
-        </div>
-        <div className="flex align-center justify-between">
-          <div>Check-out:</div>
-          <div>6nd June, 2023</div>
-        </div>
-        <div className="flex align-center justify-between">
-          <div>Total nights:</div>
-          <div>4 nights</div>
-        </div>
-        <div className="flex align-center justify-between">
-          <div>Total:</div>
-          <div className="font-semibold">
-            {listingDetails?.currency?.symbol}
-            {4 * listingDetails?.price}
-          </div>
-        </div>
-        <button
-          type="button"
-          className="bg-primary p-2 mt-3 rounded-md text-white"
-        >
-          Reserve
-        </button>
       </div>
+      {/* TODO: Location map */}
     </div>
   );
 };
